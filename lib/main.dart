@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Scaffold(
+      home: Profile()
+  ));
+}
+
+class  Profile extends StatelessWidget {
+  const Profile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       backgroundColor: Colors.purple[70],
       appBar: AppBar(
         title: Text('Socmedtime App', style: TextStyle(
@@ -11,8 +20,8 @@ void main() {
           color: Colors.white,
           shadows: [
             Shadow(blurRadius: 10.0,
-            color: Colors.black,
-            offset: Offset(2.0,2.0),
+              color: Colors.black,
+              offset: Offset(2.0,2.0),
             ),
           ],
         ),),
@@ -20,81 +29,166 @@ void main() {
       ),
       body: Column(
         children: [
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'User Profile',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(height: 10), // spacing between text and icon
+                Icon(
+                  Icons.person,
+                  size: 100,
+                ),
+              ],
+            ),
+          ),
+
           Container(
             margin: EdgeInsets.all(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Name:', style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
-                Container(
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  child: Text('Princes Yesha', style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.black,
-                    ),
-                  ),
                 ),
               ],
             ),
           ),
 
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            margin: EdgeInsets.all(10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Age:', style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
+                Text('Princes Yesha', style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.black,
                 ),
-                Container(
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  child: Text('21 Years Old', style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.black,
-                    ),
-                  ),
                 ),
               ],
             ),
           ),
 
-          // Gender Row with fromLTRB margin
           Container(
-            margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
+            padding: EdgeInsets.all(10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Gender:', style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
+                Text('Email', style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
-                Container(
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  child: Text('Female', style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.black,
-                    ),
-                  ),
                 ),
               ],
+            ),
+          ),
+
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('princesstumbaga2@gmail.com', style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.black,
+                ),
+                ),
+              ],
+            ),
+          ),
+
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Company', style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                ),
+              ],
+            ),
+          ),
+
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('princesstumbaga2@gmail.com', style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.black,
+                ),
+                ),
+              ],
+            ),
+          ),
+
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Contact Number', style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                ),
+              ],
+            ),
+          ),
+
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('09504306245', style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.black,
+                ),
+                ),
+              ],
+            ),
+          ),
+
+          // LOGOUT BUTTON
+          SizedBox(height: 20),
+          Center(
+            child: OutlinedButton(
+              onPressed: () {
+                // Logout action here
+              },
+              style: OutlinedButton.styleFrom(
+                side: BorderSide(color: Colors.deepPurple),
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+              ),
+              child: Text(
+                'LOGOUT',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.deepPurple,
+                ),
+              ),
             ),
           ),
         ],
       ),
-    ),
-  ));
+    );
+  }
 }
-
