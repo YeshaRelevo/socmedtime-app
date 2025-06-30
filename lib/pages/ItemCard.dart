@@ -22,7 +22,7 @@ class Itemcard extends StatelessWidget {
           socialApp.name,
           style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 9),
           Text('${socialApp.minute} minutes used', style:
             TextStyle( fontSize: 15,),),
           Text('Is it Day? ${socialApp.isDay}')
