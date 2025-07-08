@@ -8,11 +8,12 @@ class Listitems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<SocialApp> socialApps = [
-      SocialApp(name: 'Threads', minute: 20, isUse: true, isDay: false),
-      SocialApp(name: 'X', minute: 30, isUse: false, isDay: true),
-      SocialApp(name: 'Instagram', minute: 40, isUse: true, isDay: false),
-      SocialApp(name: 'Facebook', minute: 50, isUse: false, isDay: true),
-      SocialApp(name: 'Tiktok', minute: 60, isUse: true, isDay: false),
+      SocialApp(name: 'Threads', minute: 20, isUse: true, isDay: false, description: 'for chismis'),
+      SocialApp(name: 'X', minute: 30, isUse: false, isDay: true, description: 'for chismis den'),
+      SocialApp(name: 'Instagram', minute: 40, isUse: true, isDay: false, description: 'cgismis also'),
+      SocialApp(name: 'Facebook', minute: 50, isUse: false, isDay: true, description: 'scroll scroll'),
+      SocialApp(name: 'Tiktok', minute: 60, isUse: true, isDay: false, description: 'all time fave'),
+
     ];
 
     return Scaffold(
@@ -33,6 +34,11 @@ class Listitems extends StatelessWidget {
       body: ListView(
         children: socialApps.map((app) => Itemcard(socialApp: app)).toList(),
 
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Navigator.pushNamed(context, '/add');
+      },
+      child: Icon(Icons.add),
       ),
     );
   }
